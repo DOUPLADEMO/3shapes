@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Három forma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" style="padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));padding-top:max(10px,env(safe-area-inset-top))">
+  <header>
+    <img src="assets/logo.jpg" alt="Három forma">
+    <div id="lvl"></div>
+    <div id="pap" title="Összegyűjtött paprikák"></div>
+    <button class="hbtn" id="bMusic" title="Zene (N)">♪</button>
+    <button class="hbtn" id="bMenu" title="Menü (Esc)">☰</button>
+  </header>
+  <div id="stage">
+    <canvas id="cv"></canvas>
+    <div id="banner"></div>
+    <div id="toast"></div>
+    <div id="screen" class="dim"></div>
+  </div>
+  <div id="hint"></div>
+  <div id="cards">
+    <div class="card" data-i="0" style="--c:var(--g)">
+      <svg width="32" height="32" viewBox="0 0 34 34"><circle cx="17" cy="17" r="14" fill="#F5B83D"/><circle cx="12.5" cy="15" r="3" fill="#fff"/><circle cx="21.5" cy="15" r="3" fill="#fff"/><circle cx="13.5" cy="15.4" r="1.5" fill="#141a2e"/><circle cx="22.5" cy="15.4" r="1.5" fill="#141a2e"/></svg>
+      <div><b>Gömb<small>1</small></b><p>Gyors és gurul, lejtőn magától is. Felugrik a kockára, a háromszögön nekifutásból felszalad és elrugaszkodik. Egyedül ő fér be a szűk résekbe.</p></div>
+    </div>
+    <div class="card" data-i="1" style="--c:var(--t)">
+      <svg width="32" height="32" viewBox="0 0 34 34"><path d="M17 6 L33 31 L1 31 Z" fill="#EF6A5A"/><circle cx="13" cy="23" r="3" fill="#fff"/><circle cx="21" cy="23" r="3" fill="#fff"/><circle cx="14" cy="23.4" r="1.5" fill="#141a2e"/><circle cx="22" cy="23.4" r="1.5" fill="#141a2e"/></svg>
+      <div><b>Háromszög<small>2</small></b><p>Élő rámpa: a gömb felfut rajta, a csúcsáról nagyot pattan. A tüskés lyukba befordul, és híd lesz. <kbd>E</kbd> roham: áttöri a repedt falat.</p></div>
+    </div>
+    <div class="card" data-i="2" style="--c:var(--k)">
+      <svg width="32" height="32" viewBox="0 0 34 34"><rect x="4" y="4" width="26" height="26" rx="3" fill="#3FB8A9"/><circle cx="12.5" cy="15" r="3" fill="#fff"/><circle cx="21.5" cy="15" r="3" fill="#fff"/><circle cx="13.5" cy="15.4" r="1.5" fill="#141a2e"/><circle cx="22.5" cy="15.4" r="1.5" fill="#141a2e"/></svg>
+      <div><b>Kocka<small>3</small></b><p>Nehéz: mindenkit eltol, őt senki. A lövedék elakad benne, csak ő nyomja le a lila kapcsolót. <kbd>E</kbd> bástya: toronnyá nő.</p></div>
+    </div>
+  </div>
+  <div id="keys"><kbd>←</kbd><kbd>→</kbd> mozgás &nbsp; <kbd>↑</kbd>/<kbd>Space</kbd> ugrás &nbsp; <kbd>E</kbd> képesség &nbsp; <kbd>Tab</kbd> vagy <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> váltás &nbsp; <kbd>↓</kbd> nyomva: nem pattan &nbsp; <kbd>R</kbd> pálya újra &nbsp; <kbd>Esc</kbd> menü &nbsp; <kbd>N</kbd> zene &nbsp; <kbd>M</kbd> minden hang</div>
+  <div id="touch">
+    <div class="grp"><button data-k="left">◀</button><button data-k="right">▶</button></div>
+    <div class="grp"><button data-k="switch">⇆</button><button data-k="special">E</button><button data-k="jump">▲</button></div>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
